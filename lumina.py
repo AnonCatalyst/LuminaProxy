@@ -147,7 +147,7 @@ def main():
         # Add more proxy websites here
     ]
 
-    target_ports = {1080, 8000, 8001, 8002, 1082}
+    target_ports = {1080, 8000, 8001, 8002, 1082, 80, 8080, 8445, 8443, 8888, 8444, 3128, 1081}
 
     proxy_scraper = ProxyScraper(proxy_websites, target_ports)
 
