@@ -1,6 +1,6 @@
 # LuminaProxy 🌐
 
-**LuminaProxy** is a versatile Python tool meticulously crafted by AnonCatalyst, designed for effortless proxy scraping from various online sources. With its unique features, efficient design, and versatile use cases, LuminaProxy stands out as a powerful tool for researchers, cybersecurity enthusiasts, and network administrators.
+**LuminaProxy** is a versatile Python tool designed for effortless proxy scraping from various online sources. With its unique features, efficient design, and versatile use cases, LuminaProxy stands out as a powerful tool for researchers, cybersecurity enthusiasts, and network administrators.
 
 ## Key Features
 
