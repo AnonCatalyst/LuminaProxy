@@ -84,12 +84,19 @@ def clear_screen():
 
 def print_welcome():
     clear_screen()
+
+    print("""
+
+      ▐▓█▀▀▀▀▀▀▀▀▀█▓▌░▄▄▄▄▄░
+      ▐▓█░░▀░░▀▄░░█▓▌░█▄▄▄█░
+      ▐▓█░░▄░░▄▀░░█▓▌░█▄▄▄█░
+      ▐▓█▄▄▄▄▄▄▄▄▄█▓▌░█████░
+      ░░░░▄▄███▄▄░░░░░█████░
+     ⊱ ───ஓ๑ LUMINA PROXY ๑ஓ ─── ⊰""")
+
     print("\033[1m\033[92mWelcome to \033[1m\033[95mLuminaProxy\033[0m - Your \033[1m\033[96mBright Proxy Scraper\033[0m\n")
-    print("\033[1m🌟 Description:\033[0m LuminaProxy is a powerful tool crafted by AnonCatalyst to streamline the process of gathering proxy information from various online sources.")
-    print("Whether you're conducting research, enhancing security, or testing network configurations, LuminaProxy empowers you to effortlessly collect and categorize proxies.")
-    print("Its threaded and efficient design ensures a swift scraping experience, providing you with a clear summary of valid proxies, invalid entries, and any encountered errors.")
     print("\033[1m👨‍💻 Developer:\033[0m AnonCatalyst\n\033[1m🔗 GitHub:\033[0m [AnonCatalyst on GitHub](https://github.com/AnonCatalyst)")
-    print("\033[1m📸 Instagram:\033[0m [@istoleyourbutter](https://www.instagram.com/istoleyourbutter/)")
+    print("\033[1m📸 Instagram:\033[0m [@istoleyourbutter](https://www.instagram.com/istoleyourbutter/)\n")
 
 def main():
     proxy_websites = [
@@ -160,6 +167,7 @@ def main():
     successful_sites = proxy_scraper.successful_sites
     failed_sites = proxy_scraper.failed_sites
 
+    global proxy_summary
     proxy_summary = [
         {"Category": "\033[1m\033[92mValid Proxies\033[0m", "Count": valid_proxy_count},
         {"Category": "\033[1m\033[91mInvalid Proxies\033[0m", "Count": invalid_proxy_count},
@@ -172,10 +180,12 @@ def main():
     print("\n\033[1m📊 Proxy Summary:\033[0m")
     print(tabulate(proxy_summary, headers="keys"))
 
-    if valid_proxy_count > 0:
+    if valid_proxy_count > 1:
         print("\n\033[1m✅ Valid Proxies:\033[0m")
+        #print(proxy_summary)
         for proxy in proxy_scraper.valid_proxies:
             print(proxy)
+
     else:
         print("\n\033[1mℹ️ No valid proxies were found.\033[0m")
 

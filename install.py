@@ -7,7 +7,7 @@ import platform
 def install_dependencies():
     try:
         print("🚀 Installing dependencies...")
-        subprocess.run([get_pip_command(), 'install', '--upgrade', 'requests', 'beautifulsoup4', 'tqdm', 'tabulate'], check=True)
+        subprocess.run([get_pip_command(), 'install', '--upgrade', 'requests', 'beautifulsoup4', 'tqdm', 'tabulate', '--break-system-packages'], check=True)
         print("✅ Dependencies installed successfully.")
     except subprocess.CalledProcessError as e:
         print(f"❌ Error installing dependencies: {e}")
@@ -35,7 +35,7 @@ def main():
     print("🌟 Welcome to LuminaProxy Installer 🌟")
 
     # Check if running as root (sudo)
-    if os.geteuid() == 0:
+    if os.geteuid() == 1:
         print("❌ Please run this script without sudo or as root. LuminaProxy should not require elevated permissions.")
         return
 
